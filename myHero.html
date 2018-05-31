@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>英雄</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">英雄</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">时代英雄</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">心中的英雄</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">英雄</h1>
+          <h2 class="masthead-subheading mb-0">天地英雄气，千秋尚凛然</h2>
+          <p>时代需要宣传英雄，英雄需要被历史记录</p>
+          <div class="noExtensionClass" style="display:none" id="noExtension">
+                    请安装 
+            <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a> 激活Dapp的功能。
+        </div> 
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+            <div class="p-5">
+              <h2 class="display-4" id="firstName"></h2>
+              <p id="firstDescription"></p>
+              <p id="firstFrom" style="display: none;"></p>
+              <p id="firstIndex" style="display: none;"></p>
+              <p id="firstCallNum"></p>
+              <div class="content_show" style="display: none;">
+                <button type="button" class="btn btn-danger btn-default" onclick="call('firstFrom','firstIndex')">为他打call</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+            <div class="p-5">
+              <h2 class="display-4" id="secondName"></h2>
+              <p id="secondDescription"></p>
+              <p id="secondFrom" style="display: none;">></p>
+              <p id="secondIndex" style="display: none;"></p>
+              <p id="secondCallNum"></p>
+              <div class="content_show" style="display: none;">
+                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+            <div class="p-5">
+              <h2 class="display-4" id="thirdName"></h2>
+              <p id="thirdDescription"></p>
+              <p id="thirdFrom" style="display: none;">></p>
+              <p id="thirdIndex" style="display: none;"></p>
+              <p id="thirdCallNum"></p>
+              <div class="content_show" style="display: none;">
+                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+            <div class="p-5">
+              <h2 class="display-4" id="fourthName"></h2>
+              <p id="fourthDescription"></p>
+              <p id="fourthFrom" style="display: none;">></p>
+              <p id="fourthIndex" style="display: none;"></p>
+              <p id="fourthCallNum"></p>
+              <div class="content_show" style="display: none;">
+                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section>
+      <div class="container">
+        <div class="row align-items-center">
+            <div class="p-5">
+              <h2 class="display-4" id="fifthName"></h2>
+              <p id="fifthDescription"></p>
+              <p id="fifthFrom" style="display: none;">></p>
+              <p id="fifthIndex" style="display: none;"></p>
+              <p id="fifthCallNum"></p>
+              <div class="content_show" style="display: none;">
+                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <div class="container">
+     <div class="row clearfix">
+      <div class="col-md-12 column">
+         <button type="button" class="btn btn-default btn-block" id="nextPage">下一页</button>
+      </div>
+      </div>
+    </div>
+    <br>
+
+  <div class="content_show" style="display: none;">
+      <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+             <label for="inputEmail3" class="col-sm-2 control-label" >英雄姓名</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="myHeroName" />
+            </div>
+          </div>
+          <div class="form-group">
+             <label for="inputPassword3" class="col-sm-2 control-label" >英雄事迹</label>
+            <div class="col-sm-10">
+              <!-- <input type="password" class="form-control" id="inputPassword3" /> -->
+              <textarea class="form-control" id="myHeroStory"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+               <button type="button" class="btn btn-default" style="border-width: 1;border-color: lightgray" id="setMessage">添加我心中的英雄</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+
+      <div class="container">
+         <div align="center">
+          <img src="./img/logo_white.png" width="180" height="60" >
+         </div>
+<!--        <div class="m-0 text-center text-white small">用星云链记录和宣传英雄事迹 <a href="mailto:rickliu414149871@gmail.com">联系我</a></div>  -->
+        <p class="m-0 text-center text-white small">Copyright © 2018 英雄 <a href="mailto:rickliu414149871@gmail.com">联系我</a></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./dist/nebulas.js"></script>
+    <script src="./dist/nebPay.js"></script>
+
+    <!-- 判断是否安装钱包 -->
+    <script type="text/javascript">
+      if (typeof(webExtensionWallet) == 'undefined') {
+        $(".noExtensionClass").show();
+      } else {
+        $(".content_show").show();
+      }
+
+      window.onload = function() {
+        getNewMessage(0);
+      };
+    </script>
+
+    <script>
+      'use strict';
+
+      var dappAddress = "n1gfsKzDgPimNrPqwx6hXtiVXLivPdZ1DEL";     //mainnet
+      // var dappAddress = "n1f7BMaoBDiq3orDGgcF8UeCTjHcpG3t6iH";     //testnet
+      var nebulas = require("nebulas"),
+          Account = nebulas.Account,
+          neb = new nebulas.Neb();
+
+      neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
+      // neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+
+
+      function getNewMessage(offset) {
+        var from = Account.NewAccount().getAddressString();
+        var value = "0";
+        var nonce = "0";
+        var gas_price = "1000000";
+        var gas_limit = "2000000";
+        var callFunction = "getNewMessage";
+        // var offset = 0;
+        var callArgs = "[\"" + 5 + "\",\"" + offset + "\"]";
+        var contract = {
+          "function" : callFunction,
+          "args" : callArgs,
+        }
+
+        neb.api.call(from, dappAddress, value, nonce, gas_price, gas_limit, contract).then(function(resp) {
+            cbSearch(resp);
+        }).catch(function(err) {
+            console.log("error : " + err.message);
+        })
+      }
+
+      function cbSearch(resp) {
+        var result = resp.result;
+        console.log("result = " + result);
+        result = JSON.parse(result);
+
+        var names = ["firstName","secondName","thirdName","fourthName","fifthName"];
+        var descriptions = ["firstDescription","secondDescription","thirdDescription","fourthDescription","fifthDescription"];
+        var froms = ["firstFrom","secondFrom","thirdFrom","fourthFrom","fifthFrom"];
+        var indexs = ["firstIndex","secondIndex","thirdIndex","fourthIndex","fifthIndex"];
+        var callNums = ["firstCallNum","secondCallNum","thirdCallNum","fourthCallNum","fifthCallNum"];
+        for (var i = 0; i < result.length; i++) {
+          var message = result[i];
+          var index = message["index"];
+          var name = message["name"];
+          var value = message["value"];
+          var address = message["address"];
+          var callNum = message["voteNum"];
+          document.getElementById(names[i]).innerHTML = name;
+          document.getElementById(descriptions[i]).innerHTML = value;
+          document.getElementById(froms[i]).innerHTML = address;
+          document.getElementById(indexs[i]).innerHTML = index;
+          document.getElementById(callNums[i]).innerHTML = "打call数: " + callNum;
+        }
+      }
+
+      //获取下一页消息
+      var page = 0;
+      $("#nextPage").click(function() {
+         page += 5;
+         getNewMessage(page);
+      })
+
+      //NebPay
+      var NebPay = require("nebpay");
+      var nebPay = new NebPay();
+      var serialNumber;   //交易序列号
+      var intervalQuery;  //定时查询交易结果  
+
+      $("#setMessage").click(function() {
+        var to = dappAddress;
+        var value = "0";
+        var callFunction = "setMessage";
+        var address = "n1XfZsYC7dNmgVysW72S3EvFQy4xemindTW";
+        var name = document.getElementById("myHeroName").value;
+        var message = document.getElementById("myHeroStory").value;
+        var callArgs = "[\"" + name + "\",\"" + message + "\"]";
+        var options = {
+          //callback 是交易查询服务器地址,
+          callback : NebPay.config.mainnetUrl     //在主网查询
+          // callback : NebPay.config.testnetUrl        //在测试网查询
+        }
+
+        //发起交易(发起智能合约调用)
+        serialNumber = nebPay.call(to, value, callFunction, callArgs, options);
+
+        //设置定时查询结果
+        intervalQuery = setInterval(function() {
+          funcIntervalQuery();
+        }, 10000);//建议查询频率10-15s,因为星云链出块时间为15s,并且查询服务器限制每分钟最多查询10次。
+      })
+
+
+      function call(address_id, messageIndex_id) {
+
+        var address = document.getElementById(address_id).innerHTML;
+        var messageIndex = document.getElementById(messageIndex_id).innerHTML;
+        // console.log("address = " + address + " messageIndex = " + messageIndex);
+        setCall(address, messageIndex);
+      }
+
+      //为他打 call
+      function setCall(address, messageIndex) {
+        var to = dappAddress;
+        var value = "0";
+        var callFunction = "setVote";
+        var callArgs = "[\"" + address + "\",\"" + messageIndex + "\"]";
+        var options = {
+          //callback 是交易查询服务器地址,
+          callback : NebPay.config.mainnetUrl     //在主网查询
+          // callback : NebPay.config.testnetUrl        //在测试网查询
+        }
+
+        //发起交易(发起智能合约调用)
+        serialNumber = nebPay.call(to, value, callFunction, callArgs, options);
+
+        //设置定时查询结果
+        intervalQuery = setInterval(function() {
+          funcIntervalQuery();
+        }, 10000);//建议查询频率10-15s,因为星云链出块时间为15s,并且查询服务器限制每分钟最多查询10次。
+      }
+
+      //查询交易结果。queryPayInfo 返回的是一个 Promise 对象
+      function funcIntervalQuery() {
+
+        var options = {
+            //callback 是交易查询服务器地址,
+            // callback : testnetUrl //测试网路查询
+            callback: NebPay.config.mainnetUrl  //在主网查询(默认值)
+            // callback: NebPay.config.testnetUrl     //在测试网查询
+        }
+
+        //queryPayInfo的options参数用来指定查询交易的服务器地址,(如果是主网可以忽略,因为默认服务器是在主网查询)
+        nebPay.queryPayInfo(serialNumber, options)  //search transaction result from server (result upload to server by app)
+          .then(function(resp){
+            console.log("tx result: " + resp);
+            var respObject = JSON.parse(resp)
+            //code==0 交易发送成功,status==交易已被打包上链
+            if (respObject.code === 0 && respObject.data.status === 1) {
+              //交易成功,处理后续任务...
+              console.log("交易成功,处理后续任务...");
+              clearInterval(intervalQuery)  //清楚定时查询
+            }
+          })
+          .catch(function(err) {
+            console.log(err);
+          })
+      } 
+
+      // function funcIntervalQuery2(txHash, resolve, reject) {
+        
+      //     // var neburl = "https://mainnet.nebulas.io";
+      //     var neburl = "https://testnet.nebulas.io";
+      //     axios.post(neburl + "/v1/user/getTransactionReceipt", { hash: txHash })
+      //         .then(d => {
+      //             if (d.data && d.data.result.execute_result !== "") {
+      //                 resolve(d.data.result);
+      //                 console.log("tx result: " + d.data.result);
+      //             } else if (d.data.status === 0) {
+      //                 reject({ data: d.data, queryReturn: true });
+      //             } else {
+      //                 reject({ data: d.data, queryReturn: false });
+      //             }
+      //         });
+      // }
+
+
+
+    </script>
+
+  </body>
+</html>

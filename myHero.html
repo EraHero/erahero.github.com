@@ -88,7 +88,7 @@
               <p id="secondIndex" style="display: none;"></p>
               <p id="secondCallNum"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('secondFrom','secondIndex')">为他打call</button>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
               <p id="thirdIndex" style="display: none;"></p>
               <p id="thirdCallNum"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('thirdFrom','thirdIndex')">为他打call</button>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@
               <p id="fourthIndex" style="display: none;"></p>
               <p id="fourthCallNum"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('fourthFrom','fourthIndex')">为他打call</button>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@
               <p id="fifthIndex" style="display: none;"></p>
               <p id="fifthCallNum"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default" onclick="call('firstIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('fifthFrom','fifthIndex')">为他打call</button>
           </div>
         </div>
       </div>
@@ -315,7 +315,7 @@
 
         var address = document.getElementById(address_id).innerHTML;
         var messageIndex = document.getElementById(messageIndex_id).innerHTML;
-        // console.log("address = " + address + " messageIndex = " + messageIndex);
+        console.log("address = " + address + " messageIndex = " + messageIndex);
         setCall(address, messageIndex);
       }
 

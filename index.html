@@ -101,7 +101,7 @@
               <p id="secondIndex" style="display: none;"></p>
               <p id="secondCallNum"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('secondIndex')">为他打call</button>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
               <p id="thirdCallNum"></p>
               <p id="thirdIndex" style="display: none;"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('thirdIndex')">为他打call</button>
               </div>
             </div>
           </div>
@@ -144,10 +144,10 @@
             <div class="p-5">
               <h2 class="display-4" id="fourthName"></h2>
               <p id="fourthDescription"></p>
-              <p id="fourthIndex" style="display: none;"></p>
               <p id="fourthCallNum"></p>
+              <p id="fourthIndex" style="display: none;"></p>
               <div class="content_show" style="display: none;">
-                <button type="button" class="btn btn-danger btn-default">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('fourthIndex')">为他打call</button>
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@
         }
       }
 
-      function call(p_id) {
+      function call(p_id) { 
         var messageIndex = document.getElementById(p_id).innerHTML
         setCall(messageIndex);
       }

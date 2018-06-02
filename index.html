@@ -286,28 +286,13 @@
 
 
         serialNumber = nebPay.call(to, value, callFunction, callArgs, {
-          qrcode: {
-              showQRCode: true
-          },
+          // qrcode: {
+          //     showQRCode: true
+          // },
           callback: NebPay.config.mainnetUrl, //在主网查询(默认值)
           // callback: NebPay.config.testnetUrl,    //在测试网查询
           listener: listener  //set listener for extension transaction result
       });
-
-        // var options = {
-        //   //callback 是交易查询服务器地址,
-        //   callback : NebPay.config.mainnetUrl     //在主网查询
-        //   // callback : NebPay.config.testnetUrl        //在测试网查询
-        // }
-
-        // //发起交易(发起智能合约调用)
-        // serialNumber = nebPay.call(to, value, callFunction, callArgs, options);
-
-        // //设置定时查询结果
-        // intervalQuery = setInterval(function() {
-        //   funcIntervalQuery();
-        // }, 10000);//建议查询频率10-15s,因为星云链出块时间为15s,并且查询服务器限制每分钟最多查询10次。
-
       }
 
       function listener(resp) {
@@ -323,6 +308,9 @@
             console.log("交易成功,处理后续任务...");
               clearInterval(intervalQuery)  //清除定时查询
               alert("打call成功");
+            } else if (receipt.status == 0) {
+                clearInterval(intervalQuery)  //清除定时查询
+                alert("失败");
             } else {
               intervalQuery = setTimeout(() => {
                 onrefreshClick(txhash);
@@ -330,34 +318,6 @@
             }
         });
     }
-
-      //查询交易结果。queryPayInfo 返回的是一个 Promise 对象
-      // function funcIntervalQuery() {
-
-      //   var options = {
-      //       //callback 是交易查询服务器地址,
-      //       // callback : testnetUrl //测试网路查询
-      //       callback: NebPay.config.mainnetUrl  //在主网查询(默认值)
-      //       // callback: NebPay.config.testnetUrl     //在测试网查询
-      //   }
-
-      //   //queryPayInfo的options参数用来指定查询交易的服务器地址,(如果是主网可以忽略,因为默认服务器是在主网查询)
-      //   nebPay.queryPayInfo(serialNumber, options)  //search transaction result from server (result upload to server by app)
-      //     .then(function(resp){
-      //       console.log("tx result: " + resp);
-      //       var respObject = JSON.parse(resp)
-      //       //code==0 交易发送成功,status==交易已被打包上链
-      //       if (respObject.code === 0 && respObject.data.status === 1) {
-      //         //交易成功,处理后续任务...
-      //         console.log("交易成功,处理后续任务...");
-      //         clearInterval(intervalQuery)  //清楚定时查询
-      //       }
-      //     })
-      //     .catch(function(err) {
-      //       console.log(err);
-      //     })
-      // } 
-
 
     </script>
 

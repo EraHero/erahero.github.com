@@ -81,7 +81,7 @@
               
               <div class="content_show">
               <!-- <div class="content_show" style="display: none;"> -->
-                <button type="button" class="btn btn-danger btn-default" onclick="call('firstFrom','firstIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('firstFrom','firstIndex')"  id="firstMyHeroCallButton" style="display: none;">为他打call</button>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
 
               <div class="content_show">
               <!-- <div class="content_show" style="display: none;"> -->
-                <button type="button" class="btn btn-danger btn-default" onclick="call('secondFrom','secondIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('secondFrom','secondIndex')"  id="secondMyHeroCallButton" style="display: none;">为他打call</button>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
 
               <div class="content_show">
               <!-- <div class="content_show" style="display: none;"> -->
-                <button type="button" class="btn btn-danger btn-default" onclick="call('thirdFrom','thirdIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('thirdFrom','thirdIndex')" id="thirdMyHeroCallButton" style="display: none;">为他打call</button>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@
 
               <div class="content_show">
               <!-- <div class="content_show" style="display: none;"> -->
-                <button type="button" class="btn btn-danger btn-default" onclick="call('fourthFrom','fourthIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('fourthFrom','fourthIndex')" id="fourthMyHeroCallButton" style="display: none;">为他打call</button>
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@
 
               <div class="content_show">
               <!-- <div class="content_show" style="display: none;"> -->
-                <button type="button" class="btn btn-danger btn-default" onclick="call('fifthFrom','fifthIndex')">为他打call</button>
+                <button type="button" class="btn btn-danger btn-default" onclick="call('fifthFrom','fifthIndex')" id="fifthMyHeroCallButton" style="display: none;">为他打call</button>
           </div>
         </div>
       </div>
@@ -163,14 +163,13 @@
     <div class="container">
      <div class="row clearfix">
       <div class="col-md-12 column">
-         <button type="button" class="btn btn-default btn-block" id="nextPage">下一页</button>
+         <button type="button" class="btn btn-default btn-block" onclick="nextPage()">下一页</button>
       </div>
       </div>
     </div>
     <br>
 
-  <div class="content_show">
-  <!-- <div class="content_show" style="display: none;"> -->
+  <div class="content_show" id="content_show" style="display: none;">
       <div class="container">
     <div class="row clearfix">
       <div class="col-md-12 column">
@@ -294,10 +293,14 @@
 
       //获取下一页消息
       var page = 0;
-      $("#nextPage").click(function() {
-         page += 5;
+      function nextPage() {
+        page += 5;
          getNewMessage(page);
-      })
+      }
+      // $("#nextPage").click(function() {
+      //    page += 5;
+      //    getNewMessage(page);
+      // })
 
       //NebPay
       var NebPay = require("nebpay");
@@ -373,7 +376,6 @@
       } else {
         onrefreshClick(result["txhash"])
       }
-      // onrefreshClick(result["txhash"])
     }
 
     function onrefreshClick(txhash) {
@@ -383,6 +385,8 @@
             console.log("交易成功,处理后续任务...");
               clearInterval(intervalQuery)  //清除定时查询
               alert("打call成功");
+              page -= 5;
+              nextPage();
             } else if (receipt.status == 0) {
                 clearInterval(intervalQuery)  //清除定时查询
                 alert("失败");
@@ -397,13 +401,13 @@
     function listenerMessage(resp) {
       console.log("listener resp: " + JSON.stringify(resp))
       var result = resp;
+
       var errorCode = JSON.stringify(resp).search("Error")
       if (errorCode == 1) {
         alert("Error: Transaction rejected by user");
       } else {
         onrefreshMessage(result["txhash"])
       }
-
       // onrefreshMessage(result["txhash"])
     }
 
@@ -425,6 +429,7 @@
     }
 
     </script>
-
+  
+    <script src="./js/app.js"></script>
   </body>
 </html>
